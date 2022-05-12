@@ -1,24 +1,28 @@
+package com.nela.bookmarks.Model.Structs;
+
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class User {
- 
-    private int id; 
-    private string username;
-    private string password;
-    private TreeMap<Long, Bookmark> bookmarks;
+
+    private int id;
+    private String username;
+    private String password;
+    private TreeMap<Long, Series> bookmarks;
 
     /**
      * constructor of creating a {@linkplain User}
      * 
-     * @param username a string representing the username
-     * @param password a string representing the password
-     * @param id an int representing the id associated with this user
+     * @param username a String representing the username
+     * @param password a String representing the password
+     * @param id       an int representing the id associated with this user
      */
-    public User(string username, string password, int id) {
+    public User(String username, String password, int id) {
         this.username = username;
         this.password = password;
         this.id = id;
+        this.bookmarks = new TreeMap<>();
     }
 
     /**
@@ -28,7 +32,7 @@ public class User {
      * 
      * @return a boolean: true if the password matches, false otherwise
      */
-    public boolean checkPassword(string input) {
+    public boolean checkPassword(String input) {
         return this.password.equals(input);
     }
 
@@ -37,8 +41,17 @@ public class User {
      * 
      * @return an array of bookmarks
      */
-    public Bookmark[] getBookmarks() {
-        return this.bookmarks;
+    public Series[] getBookmarks() {
+        Series[] result;
+        ArrayList<Series> temp = new ArrayList<>(); 
+        for (Series i : this.bookmarks.values()) {
+            temp.add(i);
+        }
+
+        result = new Series[temp.size()];
+        temp.toArray(result);
+        return result;
+        
     }
 
     /**

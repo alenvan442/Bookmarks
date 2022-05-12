@@ -1,10 +1,19 @@
-package com.nela.bookmarks.viewmodel.controller;
+package com.nela.bookmarks.ViewModel.Controller;
 
-import java.lang.System.Logger;
+import java.util.logging.Logger;
+
+import com.nela.bookmarks.Model.Persistence.UserFileDAO;
+import com.nela.bookmarks.Model.Structs.Series;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * The controller class that handles the http
@@ -37,33 +46,38 @@ public class BookController {
      * @return and array of {@link Bookmark}
      */
     @GetMapping("")
-    public ResponseEntity<BookmarkNode[]> getBookmarks(@RequestParam int userid) {
+    public ResponseEntity<Series[]> getBookmarks(@RequestParam int userid) {
         LOG.info("GET /bookmarks");
-       //GET ALL 
+        //GET ALL 
+        return null;
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<BookmarkNode> getBookmark(@RequestParam int userid, @RequestParam long id) {
+    public ResponseEntity<Series> getBookmark(@RequestParam int userid, @RequestParam long id) {
         LOG.info("GET /bookmarks/" + id);
         //GET ONE
+        return null;
     }
 
     @PostMapping("")
-    public ResponseEntity<Boolean> createBookmark(@RequestParam int userid, @RequestBody Bookmark bookmark) {
+    public ResponseEntity<Boolean> createBookmark(@RequestParam int userid, @RequestBody Series bookmark) {
         LOG.info("POST /bookmarks/" + bookmark);
         //CREATE
+        return null;
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteBookmark(@RequestParam int userid, @RequestParam long id) {
         LOG.info("DELETE /bookmarks/" + id);
         //DELETE
+        return null;
     }
 
     @PutMapping("")
-    public ResponseEntity<Boolean> updateBookmark(@RequestParam int userid, @RequestBody Bookmark bookmark) {
+    public ResponseEntity<Boolean> updateBookmark(@RequestParam int userid, @RequestBody Series bookmark) {
         LOG.info("PUT /bookmarks/" + bookmark);
         //UPDATE
+        return null;
     }
 
 
