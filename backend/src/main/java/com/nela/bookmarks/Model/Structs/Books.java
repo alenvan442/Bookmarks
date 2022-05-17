@@ -5,6 +5,7 @@ public class Books {
     private String title;
     private int totalPages;
     private int currPages;
+    private int id;
 
     /**
      * constructor for creating a book object
@@ -13,10 +14,11 @@ public class Books {
      * 
      * @param title the title of the book
      */
-    public Books(String title) {
+    public Books(String title, int id) {
         this.title = title;
         this.totalPages = 0;
         this.currPages = 0;
+        this.id = id;
     }
 
     /**
@@ -78,6 +80,15 @@ public class Books {
      */
     public int getCurrPages() {
         return this.currPages;
+    }
+    
+    /**
+     * getter for the id
+     * 
+     * @return an int representing this book's id
+     */
+    public int getId() {
+        return this.id;
     }
 
 }
